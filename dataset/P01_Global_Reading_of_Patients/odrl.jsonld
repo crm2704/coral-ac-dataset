@@ -2,9 +2,9 @@
   "@context": [
     "http://www.w3.org/ns/odrl.jsonld",
     {
-      "ex": "https://hospital-example.org/",
-      "dbo": "http://dbpedia.org/ontology/",
-      "vcard": "http://www.w3.org/2006/vcard/ns#"
+      "ex": "https://hospital-knowledge-graph.org/",
+      "db": "https://hospital-database.org/",
+      "sch": "https://schema.org/"
     }
   ],
   "@type": "odrl:Set",
@@ -15,22 +15,21 @@
       "assigner": {
         "@type": [
           "odrl:Party",
-          "dbo:Hospital"
+          "sch:Hospital"
         ],
-        "uid": "ex:authority",
-        "vcard:fn": "Hospital"
+        "uid": "ex:hopital-organization",
+        "rdfs:description" : "A specific hospital that owns this policy"
       },
       "assignee": {
         "@type": [
           "odrl:PartyCollection",
-          "vcard:Group",
-          "dbo:Physician"
+          "sch:Physician"
         ],
         "uid": "ex:groups/medical-staff",
-        "vcard:fn": "Medical Staff"
+        "rdfs:description" : "Anyone who belongs to the medical staff"
       },
-      "action": "odrl:read",
-      "target": "ex:systems/db/tables/Pacientes"
+      "action": "read",
+      "target": "db:systems/db/tables/Patients"
     }
   ]
 }
