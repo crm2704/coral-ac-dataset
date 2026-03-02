@@ -1,4 +1,4 @@
-CREATE POLICY medico_read_all_patients ON Pacientes
+CREATE POLICY shysician_reads_all_patients ON Patients
 FOR SELECT
-TO medico
+TO physician
 USING (true);
