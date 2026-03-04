@@ -3,6 +3,7 @@
    
        "ex": "https://hospital-knowledge-graph.org/",
        "db": "https://hospital-database.org/db/table/",
-       "sch": "https://schema.org/"
+       "sch": "https://schema.org/",
+       "coral" : "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/coral.owl"
    }
 }
