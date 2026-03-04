@@ -1,5 +1,8 @@
- {
-      "ex": "https://hospital-knowledge-graph.org/",
-      "db": "https://hospital-database.org/db/table/",
-      "sch": "https://schema.org/"
-  }
+{
+ "@context": {
+   
+       "ex": "https://hospital-knowledge-graph.org/",
+       "db": "https://hospital-database.org/db/table/",
+       "sch": "https://schema.org/"
+   }
+}
