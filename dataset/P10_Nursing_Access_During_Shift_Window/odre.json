@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
+    "https://raw.githubusercontent.com/ODRE-Framework/odre-time/refs/heads/main/OnToology/Ontology/ontology.ttl/context/context.jsonld"
+  ],
+  "@type": "odrl:Set",
+  "uid": "ex:85bc6a9b-1cce-4398-8dd0-859af7390fbb",
+  "rdfs:label" : "Policy 10",
+  "permission": [
+    {
+      "@type": "odrl:Permission",
+      "assigner": {
+        "@type": [
+          "odrl:Party",
+          "sch:Hospital"
+        ],
+        "uid": "ex:hopital-organization",
+        "rdfs:description" : "A specific hospital that owns this policy"
+      },
+      "assignee": {
+        "@type": [
+          "odrl:PartyCollection",
+          "coral:NurseStaff"
+        ],
+        "uid": "ex:groups/nursing-staff",
+        "rdfs:description" : "Anyone who belongs to the nursing staff"
+      },
+      "action": [
+        "read",
+        "modify"
+      ],
+      "target": "db:MedicationPrescriptions",
+      "constraint": [
+            {
+              "leftOperand": "time",
+              "operator": "odrl:gteq",
+              "rightOperand": "db:NursingShifts?nurse_id={{providedId}}&shift_start"
+            },{
+              "leftOperand": "time",
+              "operator": "odrl:lteq",
+              "rightOperand": "db:NursingShifts?nurse_id={{providedId}}&shift_ends"
+            }
+      ]
+    }
+  ]
+}
