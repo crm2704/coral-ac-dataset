@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json"
+  ],
+  "@type": "odrl:Set",
+  "uid": "ex:531d8717-6655-4be0-8ce5-a689d33e2f84",
+  "rdfs:label" : "Policy 15",
+  "permission": [
+    {
+      "@type": "odrl:Permission",
+      "assigner": {
+        "@type": [
+          "odrl:Party",
+          "sch:Hospital"
+        ],
+        "uid": "ex:hopital-organization",
+        "rdfs:description" : "A specific hospital that owns this policy"
+      },
+      "assignee": {
+        "@type": [
+          "odrl:PartyCollection",
+          "coral:LaboratoryTechnician"
+        ],
+        "uid": "db:EmployeeRecords/{{provided_id}}?status='LABORATORY_TECHNICIAN'",
+        "rdfs:description" : "Anyone who belongs to the laboratory technical staff"
+      },
+      "action": "modify",
+      "target": "db:LaboratoryTestResults"
+    }
+  ]
+}
