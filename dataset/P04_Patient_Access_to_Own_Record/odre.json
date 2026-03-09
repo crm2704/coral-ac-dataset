@@ -30,7 +30,7 @@
           "odrl:PartyCollection",
           "sch:Patient"
         ],
-        "uid": "db:Patients?patient_id={{provided_id}}",
+        "uid": "db:PatientsRegistry?patient_id={{provided_id}}",
         "rdfs:description": "Anyone who is a patient of the hospital"
       },
       "action": "read",
