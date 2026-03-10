@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
+    {
+      "ex:patientStatus": {
+        "@type": "xsd:string"
+      }
+    }
+  ],
+  "@type": "odrl:Set",
+  "uid": "ex:90782d9b-ebfa-4515-8473-ddb51ecbc3c1",
+  "rdfs:label" : "Policy 07",
+  "permission": [
+    {
+      "@type": "odrl:Permission",
+      "assigner": {
+        "@type": [
+          "odrl:Party",
+          "sch:Hospital"
+        ],
+        "uid": "ex:hopital-organization",
+        "rdfs:description" : "A specific hospital that owns this policy"
+      },
+      "assignee": {
+        "@type": [
+          "odrl:PartyCollection",
+          "coral:EmergencyPhysician"
+        ],
+        "uid": "db:EmployeeRecords/{{provided_id}}?status='EMERGENCY_PHYSICIAN'",
+        "rdfs:description" : "Anyone who belongs to the medical emergency physician team"
+      },
+      "action": "read",
+      "target": "db:ClinicalRecords?patient_status='CRITIC'|patient_status='EMERGENCY'"
+    }
+  ]
+}
