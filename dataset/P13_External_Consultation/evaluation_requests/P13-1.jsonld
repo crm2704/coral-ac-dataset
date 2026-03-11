@@ -8,7 +8,7 @@
   "@id": "ex:request/P13-1",
   "evaluatedAction": "odrl:read",
   "evaluatedParty": "ex:id/staff/physician/specialist1",
-  "evaluatedTarget": ""db:ClinicalRecords",
+  "evaluatedTarget": "db:ClinicalRecords",
   "requestParameters": {
     "@type" : "RequestParameter",
     "@id" : "ex:request/P13-1/param", 
