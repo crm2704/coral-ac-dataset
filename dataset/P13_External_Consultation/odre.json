@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
+    {
+      "ex:referralTargetId": {
+        "@type": "@id"
+      },
+      "ex:subjectId": {
+        "@type": "@id"
+      },
+      "ex:referralExpiry": {
+        "@type": "xsd:dateTime"
+      },
+      "ex:currentTime": {
+        "@type": "xsd:dateTime"
+      }
+    }
+  ],
+  "@type": "odrl:Set",
+  "uid": "ex:3bd86d6b-7786-4228-8609-a96ef9251f7a",
+  "rdfs:label": "Policy 13",
+  "permission": [
+    {
+      "@type": "odrl:Permission",
+      "assigner": {
+        "@type": [
+          "odrl:Party",
+          "sch:Hospital"
+        ],
+        "uid": "ex:hopital-organization",
+        "rdfs:description": "A specific hospital that owns this policy"
+      },
+      "assignee": {
+        "@type": [
+          "odrl:PartyCollection",
+          "coral:SpecialistPhysician"
+        ],
+         "uid": "db:EmployeeRecords/{{provided_id}}?status='SPECIALIST_PHYSICIAN'",
+        "vcard:fn": "Anyone who is a specialist physician"
+      },
+      "action": "read",
+      "target": "db:ClinicalRecords/324145?record_id='AB12'",
+      "rdfs:label": "The target specifies the patient (324145) and the specific clinical record (AB12) that can be accessed by the specialist",
+      "constraint": [
+        {
+          "@type": "odrl:Constraint",
+          "leftOperand": "{{get_time()}}",
+          "operator": "odrl:lt",
+          "rightOperand": {
+            "@value": "{{compute_expiration_day('2026-05-01T13:51:59', '5D')}}",
+            "@type": "xsd:datetime"
+          }
+        }
+      ]
+    }
+  ]
+}
