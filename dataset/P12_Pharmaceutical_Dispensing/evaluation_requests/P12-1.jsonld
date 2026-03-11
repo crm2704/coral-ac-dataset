@@ -11,7 +11,7 @@
   "evaluatedTarget": "db:MedicationPrescriptions",
   "requestParameters": {
     "@type" : "RequestParameter",
-    "@id" : "ex:request/P12-1/param", 
+    "@id" : "ex:request/P12/param1", 
     "value" : "PENDING",
     "describesFeature" :  "db:MedicationPrescriptions?status" 
   }
