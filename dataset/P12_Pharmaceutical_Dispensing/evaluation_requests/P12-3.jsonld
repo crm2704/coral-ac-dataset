@@ -6,7 +6,7 @@
   ],
   "@type": "EvaluationRequest",
   "@id": "ex:request/P12-3",
-  "evaluatedAction": "odrl:read",
+  "evaluatedAction": "odrl:modify",
   "evaluatedParty": "ex:id/staff/pharmacist/pharmacist1",
   "evaluatedTarget": "db:MedicationPrescriptions",
   "requestParameters": {
