@@ -1,18 +1,7 @@
 {
   "@context": [
     "http://www.w3.org/ns/odrl.jsonld",
-    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
-    {
-       "ex:patientAge": {
-        "@type": "xsd:integer"
-      },
-      "ex:resourcePatientId": {
-        "@type": "@id"
-      },
-      "ex:subjectWardList": {
-        "@type": "@id"
-      }
-    }
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json"
   ],
   "@type": "odrl:Set",
   "uid": "ex:b98654ad-1a2a-4f74-9820-f4b260614b71",
@@ -44,15 +33,20 @@
           "and": [
             {
               "@type": "odrl:Constraint",
-              "leftOperand": "ex:patientAge",
+              "leftOperand": "db:ClinicalRecords?age",
               "operator": "odrl:lt",
               "rightOperand": 18
             },
             {
               "@type": "odrl:Constraint",
-              "leftOperand": "ex:resourcePatientId",
+              "leftOperand": "ex:request/P14/param-legal-guardian",
               "operator": "odrl:isPartOf",
-              "rightOperand": "ex:subjectWardList"
+              "rightOperand": "db:ClinicalRecords?legal_guardian"
+            },{
+              "@type": "odrl:Constraint",
+              "leftOperand": "ex:request/P14/param-underage_patient",
+              "operator": "odrl:eq",
+              "rightOperand": "db:ClinicalRecords?patient_id"
             }
           ]
         }
