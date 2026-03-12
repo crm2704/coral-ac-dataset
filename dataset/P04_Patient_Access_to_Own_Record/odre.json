@@ -1,19 +1,11 @@
 {
   "@context": [
     "http://www.w3.org/ns/odrl.jsonld",
-    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
-    {
-      "ex:subjectId": {
-        "@type": "@id"
-      },
-      "ex:resourcePatientId": {
-        "@type": "@id"
-      }
-    }
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json"
   ],
   "@type": "odrl:Set",
   "uid": "ex:dc851af8-9798-4221-b79b-e0cbf6216d81",
-  "rdfs:label" : "Policy 04",
+  "rdfs:label": "Policy 04",
   "permission": [
     {
       "@type": "odrl:Permission",
@@ -23,7 +15,7 @@
           "sch:Hospital"
         ],
         "uid": "ex:hopital-organization",
-        "rdfs:description" : "A specific hospital that owns this policy"
+        "rdfs:description": "A specific hospital that owns this policy"
       },
       "assignee": {
         "@type": [
@@ -34,7 +26,7 @@
         "rdfs:description": "Anyone who is a patient of the hospital"
       },
       "action": "read",
-      "target": "db:ClinicalRecords/{{provided_id}}?record"
+      "target": "db:ClinicalRecords?patient_id={{provided_id}}&record_id={{record_id}}"
     }
   ]
 }
