@@ -1,13 +1,31 @@
-# ODRL Hospital Access Control Policy Dataset
+# CORAL-AC: ODRL Hospital Access Control Policy Dataset
 
-This repository hosts a curated dataset of hospital access control policies originally implemented using Row-Level Security (RLS) in PostgreSQL and manually translated into the Open Digital Rights Language (ODRL). The dataset was developed to support reproducible research on policy representation, enforcement, and evaluation in regulated domains such as healthcare.
+This repository contains the **CORAL-AC dataset**, a curated collection of hospital access control policies originally implemented using **Row-Level Security (RLS) in PostgreSQL** and manually translated into the **Open Digital Rights Language (ODRL)**.
 
-The dataset is published alongside the scientific article:
+The dataset was created to support **reproducible research on semantic policy modelling, policy evaluation, policy recommendation, and policy engine validation**, particularly in regulated domains such as healthcare where transparency, interoperability, and auditability are essential.
 
-> *Title*  
-> Conference.
+Each policy is provided in **four aligned representations**:
 
-The repository is intended to facilitate benchmarking, formal analysis, and comparative evaluation of policy enforcement mechanisms.
+- Natural language description
+- PostgreSQL Row-Level Security (RLS) rule
+- ODRL policy expressed in JSON-LD
+- ODRL+ODRE policy expressed in JSON-LD
+
+Additionally, the dataset includes **evaluation artefacts** following the conceptual model proposed in the **ODRL formal semantics**, including:
+
+- evaluation requests
+- contextual states of the world
+- expected evaluation outcomes
+
+The repository is intended to facilitate benchmarking, formal analysis, and comparative evaluation of policy enforcement mechanisms. These artefacts allow **independent validation of ODRL policy evaluators without requiring the original relational infrastructure**. 
+
+
+The dataset accompanies the scientific article:
+
+> **CORAL-AC: A Dataset of Hospital Access Control Policies for ODRL Evaluation**  
+> OPAL Workshop — Policy Management in the Web (2025)
+
+
 
 ---
 
@@ -19,9 +37,13 @@ Each policy is contained in its own directory organized as follows:
 PXX_<Policy_Title>/
 ├── rls.sql
 ├── odrl.jsonld
+├── odre.jsonld
 ├── policy.txt
 ├── evaluation_requests/
 │ ├── PXX-n.jsonld
+│ └── ...
+├── state/
+│ ├── statePXX-n.jsonld
 │ └── ...
 ├── evaluation_requests_index.json
 ├── state_of_world.json (optional)
