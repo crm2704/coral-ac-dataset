@@ -23,7 +23,7 @@ The repository is intended to facilitate benchmarking, formal analysis, and comp
 The dataset accompanies the scientific article:
 
 > **CORAL-AC: A Dataset of Hospital Access Control Policies for ODRL Evaluation**  
-> OPAL Workshop — Policy Management in the Web (2025)
+> OPAL Workshop 2026 — ODRL and beyond: practical applications and challenges for policy-base access and usage control
 
 
 
