@@ -1,22 +1,8 @@
 {
   "@context": [
     "http://www.w3.org/ns/odrl.jsonld",
-    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
-    {
-      "ex:referralTargetId": {
-        "@type": "@id"
-      },
-      "ex:subjectId": {
-        "@type": "@id"
-      },
-      "ex:referralExpiry": {
-        "@type": "xsd:dateTime"
-      },
-      "ex:currentTime": {
-        "@type": "xsd:dateTime"
-      }
-    }
-  ],
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json"
+    ],
   "@type": "odrl:Set",
   "uid": "ex:3bd86d6b-7786-4228-8609-a96ef9251f7a",
   "rdfs:label": "Policy 13",
