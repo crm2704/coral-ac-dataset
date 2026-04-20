@@ -23,9 +23,13 @@
       "rdfs:label" : "Macy Aina"
     },{
       "@id" : "ex:subjectShiftStart",
-      "@type" : "coral:WorkingShift",
-      "coral:starts" : "09:00",
-      "coral:ends" : "18:00",
+      "@type" : "coral:WorkingShiftStarts",
+      "coral:value" : "09:00",
+      "coral:shiftAppliesTo" : "ex:id/staff/nurse/nurse1"
+    },{
+      "@id" : "ex:subjectShiftEnd",
+      "@type" : "coral:WorkingShiftEnds",
+      "coral:value" : "18:00",
       "coral:shiftAppliesTo" : "ex:id/staff/nurse/nurse1"
     }
    ] 
