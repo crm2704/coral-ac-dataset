@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://raw.githubusercontent.com/w3c/odrl/refs/heads/master/formal-semantics/ontology/evaluation_request.json",
+    "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json"
+  ],
+  "@type": "EvaluationRequest",
+  "@id": "ex:request/P14-3",
+  "evaluatedAction": "odrl:read",
+  "evaluatedParty": "ex:id/family/familiar2",
+  "evaluatedTarget": "db:ClinicalRecords",
+  "requestParameters": [
+    {
+      "@type" : "RequestParameter",
+      "@id" : "ex:request/P14/param-legal-guardian",
+      "value": "ex:id/family/familiar2",
+      "rdfs:label" : "Legal guardian identity — NOT the registered guardian of this patient"
+    },
+    {
+      "@type" : "RequestParameter",
+      "@id" : "ex:request/P14/param-underage_patient",
+      "value": "V28514271",
+      "rdfs:label" : "The underage patient identity card"
+    }
+  ]
+}

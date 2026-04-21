@@ -1,0 +1,22 @@
+{
+  "@context" : [
+    "http://www.w3.org/ns/odrl.jsonld",
+    "https://raw.githubusercontent.com/w3c/odrl/refs/heads/master/formal-semantics/ontology/stow.json",
+     "https://raw.githubusercontent.com/ODRE-Framework/hospital-rls-dataset/refs/heads/main/context.json",
+    { "@context" : { "member" : { "@id" : "odrl:member", "@type" : "@id" } }}
+  ],
+  "@id" : "ex:StateP08-3",
+  "@type" : "SotW",
+  "context" :  {
+    "@id" : "ex:groups/researchers",
+    "@type" : "odrl:PartyCollection",
+    "rdfs:label" : "Hospital Resercher Team",
+    "member" : [ {
+      "@id" : "ex:id/staff/researcher/researcher1",
+      "@type" : ["odrl:Party", "coral:HospitalResearchMember"],
+      "odrl:partOf" : {"@id" : "ex:groups/researchers"},
+      "rdfs:label" : "Cruz Chance"
+    }
+   ] 
+  }
+}
